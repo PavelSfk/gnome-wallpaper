@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+
+*.egg-info/
+dist/
+build/
+
+.env
+.env.*
+*.pem
+secrets/
+
+# Local application data
+wallpaper.db
+images/

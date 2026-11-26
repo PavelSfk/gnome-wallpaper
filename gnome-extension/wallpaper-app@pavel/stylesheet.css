@@ -1,0 +1,8 @@
+.wallpaper-thumbnail {
+    margin: 4px 8px 4px 0;
+}
+
+.wallpaper-current {
+    background-color: rgba(80, 140, 220, 0.35);
+    border-radius: 6px;
+}

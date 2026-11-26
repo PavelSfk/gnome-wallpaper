@@ -1,0 +1,10 @@
+[Unit]
+Description=Wallpaper App daily wallpaper update
+After=graphical-session.target NetworkManager-wait-online.service
+Wants=graphical-session.target NetworkManager-wait-online.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/Projects/Wallpaper_app/.venv/bin/wallpaper-app daily
+Environment=PYTHONUNBUFFERED=1
+Environment=WALLHAVEN_QUERY=nature

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# NetworkManager calls this script as root with interface and state arguments.
+[ "${2:-}" = "up" ] || exit 0
+
+loginctl list-users --no-legend | while read -r uid _; do
+    user_name=$(loginctl show-user "$uid" -p Name --value)
+    runtime_path=$(loginctl show-user "$uid" -p RuntimePath --value)
+    [ -n "$user_name" ] || continue
+    [ -n "$runtime_path" ] || continue
+
+    systemctl --user --machine="${user_name}@.host" start wallpaper-app.service
+done
